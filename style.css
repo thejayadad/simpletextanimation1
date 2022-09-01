@@ -1,0 +1,41 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    background-color: black;
+    color: orangered;
+    font-family: cursive;
+}
+
+h2 {
+    position: relative;
+    -webkit-text-stroke: .3vw #ccc;
+    letter-spacing: 3px;
+    font-size: 3em;
+}
+
+h2::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    -webkit-text-stroke: 0vw #ccc;
+    border-radius: 4px solid lightskyblue;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
